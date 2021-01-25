@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer PlayerCharacterSprite_;
-    [SerializeField] private Rigidbody2D BodyPlayerCharacter_;
-    private Transform PlayerCharcterTransform_;
-    private const float DeadZone_ = 0.1f;
-    private const float MoveSpeed_ = 2.0f;
+    [SerializeField] private SpriteRenderer playerCharacterSprite_;
+    [SerializeField] private Rigidbody2D bodyPlayerCharacter_;
+    
+    private Transform playerCharacterTransform_;
+    private bool facingRight_, facingLeft_, facingUp_, facingDown_;
+    private const float DeadZone = 0.1f;
+    private const float MoveSpeed = 2.0f;
     void Start()
     {
-        PlayerCharacterSprite_ = GetComponent < SpriteRenderer>();
-        BodyPlayerCharacter_ = GetComponent<Rigidbody2D>();
-        PlayerCharcterTransform_ = GetComponent<Transform>();
+        playerCharacterSprite_ = GetComponent<SpriteRenderer>();
+        bodyPlayerCharacter_ = GetComponent<Rigidbody2D>();
+        playerCharacterTransform_ = GetComponent<Transform>();
     }
 
     
     void Update()
     {
-        BodyPlayerCharacter_.velocity = new Vector2(Input.GetAxis("Horizontal") * MoveSpeed_, BodyPlayerCharacter_.velocity.y);
+        bodyPlayerCharacter_.velocity = new Vector2(Input.GetAxis("Horizontal") * MoveSpeed, bodyPlayerCharacter_.velocity.y);
+        bodyPlayerCharacter_.velocity = new Vector2(bodyPlayerCharacter_.velocity.x,Input.GetAxis("Vertical") * MoveSpeed);
     }
 }
