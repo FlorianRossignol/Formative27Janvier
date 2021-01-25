@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2769844805719803695}
   - component: {fileID: -958411141874238803}
   - component: {fileID: 4576535359528817634}
+  - component: {fileID: -6260979129742359537}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1841151563242369082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.060637727, y: -0.34747386, z: -3.2153838}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.375, y: 0.46666664, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -121,3 +122,17 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.16, y: 0.15}
   m_Direction: 0
+--- !u!114 &-6260979129742359537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841151563242369082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea896aae4d21204c9cf664d1b0a0bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCharacterSprite_: {fileID: 2769844805719803695}
+  BodyPlayerCharacter_: {fileID: -958411141874238803}
