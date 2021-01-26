@@ -1014,15 +1014,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2461912243985137500, guid: 9a5e126ebf76d7646aa3e053230cf886, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.91897845
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2461912243985137500, guid: 9a5e126ebf76d7646aa3e053230cf886, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.956292
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2461912243985137500, guid: 9a5e126ebf76d7646aa3e053230cf886, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.0491972
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a5e126ebf76d7646aa3e053230cf886, type: 3}
@@ -1037,8 +1037,8 @@ GameObject:
   - component: {fileID: 785961414}
   - component: {fileID: 785961413}
   - component: {fileID: 785961412}
-  - component: {fileID: 785961415}
   - component: {fileID: 785961416}
+  - component: {fileID: 785961415}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1081,7 +1081,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.274215
+  orthographic size: 7.18
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1124,10 +1124,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AssetsPPU: 16
-  m_RefResolutionX: 210
-  m_RefResolutionY: 226
+  m_RefResolutionX: 256
+  m_RefResolutionY: 240
   m_UpscaleRT: 0
-  m_PixelSnapping: 1
+  m_PixelSnapping: 0
   m_CropFrameX: 1
   m_CropFrameY: 1
   m_StretchFill: 0
