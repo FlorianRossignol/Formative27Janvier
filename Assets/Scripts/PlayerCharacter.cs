@@ -27,13 +27,7 @@ public class PlayerCharacter : MonoBehaviour
         playerCharacterTransform_ = GetComponent<Transform>();
         currentState_ = State.IDLE;
     }
-    
-    void Update()
-    {
-        bodyPlayerCharacter_.velocity = new Vector2(Input.GetAxis("Horizontal") * MoveSpeed, bodyPlayerCharacter_.velocity.y);
-        bodyPlayerCharacter_.velocity = new Vector2(bodyPlayerCharacter_.velocity.x, Input.GetAxis("Vertical") * MoveSpeed);
-    }
-
+   
     private void FixedUpdate()
     {
         bodyPlayerCharacter_.velocity = new Vector2(Input.GetAxis("Horizontal") * MoveSpeed, bodyPlayerCharacter_.velocity.y);
@@ -52,6 +46,71 @@ public class PlayerCharacter : MonoBehaviour
                 if(Mathf.Abs(Input.GetAxis("Horizontal")) > DeadZone)
                 {
                     ChangeState(State.WALKSIDE);
+                }
+
+                if (Input.GetAxis("Vertical") > DeadZone)
+                {
+                    ChangeState(State.WALKUP);
+                }
+                
+                if (Input.GetAxis("Vertical") < -DeadZone)
+                {
+                    ChangeState(State.WALKDOWN);
+                }
+                break;
+
+            case State.WALKSIDE:
+
+                if (Input.GetAxis("Vertical") > DeadZone)
+                {
+                    ChangeState(State.WALKUP);
+                }
+
+                if (Input.GetAxis("Vertical") < -DeadZone)
+                {
+                    ChangeState(State.WALKDOWN);
+                }
+
+                if ((Input.GetAxis("Vertical") > -DeadZone && Input.GetAxis("Vertical") < DeadZone)
+                    && Input.GetAxis("Horizontal") > -DeadZone && Input.GetAxis("Horizontal") < DeadZone)
+                {
+                    ChangeState(State.IDLE);
+                }
+                break;
+            
+            case State.WALKUP:
+                if(Mathf.Abs(Input.GetAxis("Horizontal")) > DeadZone)
+                {
+                    ChangeState(State.WALKSIDE);
+                }
+                
+                if (Input.GetAxis("Vertical") < -DeadZone)
+                {
+                    ChangeState(State.WALKDOWN);
+                }
+                
+                if ((Input.GetAxis("Vertical") > -DeadZone && Input.GetAxis("Vertical") < DeadZone)
+                    && Input.GetAxis("Horizontal") > -DeadZone && Input.GetAxis("Horizontal") < DeadZone)
+                {
+                    ChangeState(State.IDLE);
+                }
+                break;
+            
+            case State.WALKDOWN:
+                if(Mathf.Abs(Input.GetAxis("Horizontal")) > DeadZone)
+                {
+                    ChangeState(State.WALKSIDE);
+                }
+                
+                if (Input.GetAxis("Vertical") > DeadZone)
+                {
+                    ChangeState(State.WALKUP);
+                }
+                
+                if ((Input.GetAxis("Vertical") > -DeadZone && Input.GetAxis("Vertical") < DeadZone)
+                    && Input.GetAxis("Horizontal") > -DeadZone && Input.GetAxis("Horizontal") < DeadZone)
+                {
+                    ChangeState(State.IDLE);
                 }
                 break;
         }
