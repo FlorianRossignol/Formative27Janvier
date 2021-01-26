@@ -1273,6 +1273,10 @@ PrefabInstance:
       propertyPath: hearts_.Array.data[1]
       value: 
       objectReference: {fileID: 948743590}
+    - target: {fileID: -1353718614221958786, guid: e7fe8688a8d0c9145bac49417d8dbb55, type: 3}
+      propertyPath: heartCount_
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3408016229195552521, guid: e7fe8688a8d0c9145bac49417d8dbb55, type: 3}
       propertyPath: m_SortingOrder
       value: 1
