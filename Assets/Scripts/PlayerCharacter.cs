@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour
@@ -13,6 +14,7 @@ public class PlayerCharacter : MonoBehaviour
         WALKDOWN,
         WALKUP
     }
+    
     [SerializeField] private SpriteRenderer playerCharacterSprite_;
     [SerializeField] private Rigidbody2D bodyPlayerCharacter_;
     [SerializeField] private Animator anim_;
@@ -22,6 +24,7 @@ public class PlayerCharacter : MonoBehaviour
     private bool facingRight_ = false;
     private const float DeadZone = 0.1f;
     private const float MoveSpeed = 2.0f;
+    
     void Start()
     {
         playerCharacterTransform_ = GetComponent<Transform>();
@@ -142,7 +145,14 @@ public class PlayerCharacter : MonoBehaviour
             }
             currentState_ = state;
         }
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Heart"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
-    
-    
