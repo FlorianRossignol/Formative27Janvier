@@ -18,51 +18,70 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField] private Animator anim_;
     
     private Transform playerCharacterTransform_;
-    private State currentstate_;
+    private State currentState_;
     private bool facingRight_ = false;
     private const float DeadZone = 0.1f;
     private const float MoveSpeed = 2.0f;
     void Start()
     {
         playerCharacterTransform_ = GetComponent<Transform>();
+        currentState_ = State.IDLE;
     }
-
     
     void Update()
     {
+    }
+
+    private void FixedUpdate()
+    {
         bodyPlayerCharacter_.velocity = new Vector2(Input.GetAxis("Horizontal") * MoveSpeed, bodyPlayerCharacter_.velocity.y);
         bodyPlayerCharacter_.velocity = new Vector2(bodyPlayerCharacter_.velocity.x,Input.GetAxis("Vertical") * MoveSpeed);
-
-       
-    }
-
-
-    void Flip()
-    {
-        playerCharacterSprite_.flipX = !playerCharacterSprite_.flipX;
-        facingRight_ = !facingRight_;
-    }
-
-
-    void ChangeState(State state)
-    {
-        switch(state)
+        if (Input.GetAxis("Horizontal") > DeadZone && !facingRight_)
+        {
+            Flip();
+        }
+        if (Input.GetAxis("Horizontal") < -DeadZone && facingRight_)
+        {
+            Flip();
+        }
+        switch (currentState_)
         {
             case State.IDLE:
-                anim_.Play("idle");
+                if(Mathf.Abs(Input.GetAxis("Horizontal")) > DeadZone)
+                {
+                    ChangeState(State.WALKSIDE);
+                }
                 break;
-            case State.WALKSIDE:
-                anim_.Play("walkleftright");
-                break;
-            case State.WALKDOWN:
-                anim_.Play("walkdown");
-                break;
-            case State.WALKUP:
-                anim_.Play("walkup");
-                break;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(state), state, null);
         }
-        currentstate_ = state;
+
+        void Flip()
+        {
+            playerCharacterSprite_.flipX = !playerCharacterSprite_.flipX;
+            facingRight_ = !facingRight_;
+        }
+        
+        void ChangeState(State state)
+        {
+            switch(state)
+            {
+                case State.IDLE:
+                    anim_.Play("idle");
+                    break;
+                case State.WALKSIDE:
+                    anim_.Play("walkleftright");
+                    break;
+                case State.WALKDOWN:
+                    anim_.Play("walkdown");
+                    break;
+                case State.WALKUP:
+                    anim_.Play("walkup");
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(state), state, null);
+            }
+            currentState_ = state;
+        }
     }
 }
+    
+    
