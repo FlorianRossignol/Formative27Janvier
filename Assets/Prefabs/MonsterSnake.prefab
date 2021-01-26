@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1425959620357957103}
   - component: {fileID: 8106844162323780894}
   - component: {fileID: 8622795404985410785}
+  - component: {fileID: 205995254413374681}
   m_Layer: 0
   m_Name: MonsterSnake
   m_TagString: Untagged
@@ -151,3 +152,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &205995254413374681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42150313784170677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c0e478703a5fe4f935efe56fe7b39f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snakeanim_: {fileID: 8622795404985410785}
