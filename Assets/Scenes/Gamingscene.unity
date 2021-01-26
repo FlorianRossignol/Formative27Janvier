@@ -979,6 +979,11 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1 &401316523 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5443858835223211913, guid: 0cf151854490b9c4c8ece5980d8fd544, type: 3}
+  m_PrefabInstance: {fileID: 1182980545}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &603290023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1256,6 +1261,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1973573722}
     m_Modifications:
+    - target: {fileID: -1353718614221958786, guid: e7fe8688a8d0c9145bac49417d8dbb55, type: 3}
+      propertyPath: hearts_.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1353718614221958786, guid: e7fe8688a8d0c9145bac49417d8dbb55, type: 3}
+      propertyPath: hearts_.Array.data[0]
+      value: 
+      objectReference: {fileID: 401316523}
+    - target: {fileID: -1353718614221958786, guid: e7fe8688a8d0c9145bac49417d8dbb55, type: 3}
+      propertyPath: hearts_.Array.data[1]
+      value: 
+      objectReference: {fileID: 948743590}
     - target: {fileID: 4783022764334799944, guid: e7fe8688a8d0c9145bac49417d8dbb55, type: 3}
       propertyPath: m_Name
       value: Chest
@@ -1306,6 +1323,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7fe8688a8d0c9145bac49417d8dbb55, type: 3}
+--- !u!1 &948743590 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5443858835223211913, guid: 0cf151854490b9c4c8ece5980d8fd544, type: 3}
+  m_PrefabInstance: {fileID: 1197083786}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &963325066 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3365041118221766737, guid: 0cf151854490b9c4c8ece5980d8fd544, type: 3}
